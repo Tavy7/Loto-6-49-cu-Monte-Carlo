@@ -23,14 +23,9 @@ def AlegeNumere():
 	return sorted(numere)
 
 def VerificaBilet(bilet, numereCastigatoare):
-	nrNumereCastigatoare = 0
+	numereComune = list(set(bilet).intersection(numereCastigatoare))
 	
-	for i in range(6):
-		# Listele sunt sortate crescator
-		if bilet[i] == numereCastigatoare[i]:
-			nrNumereCastigatoare += 1
-
-	return nrNumereCastigatoare
+	return len(numereComune)
 
 def Joaca(numereJucator):
 	# Alegem 6 numere random, ca cele castigatoare
